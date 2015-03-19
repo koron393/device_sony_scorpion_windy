@@ -20,3 +20,6 @@ PRODUCT_COPY_FILES += \
 
 # CMHW
 BOARD_HARDWARE_CLASS += device/sony/scorpion_windy/cmhw
+
+# SELinux
+BOARD_SEPOLICY_DIRS += device/sony/scorpion_windy/sepolicy

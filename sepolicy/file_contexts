@@ -1,0 +1,1 @@
+/sys/devices/virtual/input/clearpad/wakeup_gesture	u:object_r:sysfs_touch:s0
