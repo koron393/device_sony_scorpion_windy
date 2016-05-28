@@ -18,6 +18,10 @@ include device/sony/shinano-common/cm-platform.mk
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml
 
+# NFC
+PRODUCT_COPY_FILES += \
+    device/sony/scorpion_windy/rootdir/system/etc/libnfc-brcm_cm.conf:system/etc/libnfc-brcm.conf
+
 # CMHW
 BOARD_HARDWARE_CLASS += device/sony/scorpion_windy/cmhw
 

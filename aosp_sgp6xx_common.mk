@@ -21,7 +21,7 @@ PRODUCT_COPY_FILES += \
     device/sony/scorpion_windy/rootdir/system/etc/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
     device/sony/scorpion_windy/rootdir/system/etc/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
     device/sony/scorpion_windy/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
-    device/sony/scorpion_windy/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    device/sony/scorpion_windy/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf.bak \
     device/sony/scorpion_windy/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     device/sony/scorpion_windy/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
 
