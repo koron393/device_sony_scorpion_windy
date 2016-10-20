@@ -38,6 +38,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     nfc_nci.scorpion_windy
 
+# System.prop
+TARGET_SYSTEM_PROP += device/sony/scorpion_windy/system.prop
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/sony/scorpion_windy/aosp_sgp6xx_common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)

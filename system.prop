@@ -1,0 +1,3 @@
+# NO RIL
+rild.libpath=
+ro.radio.noril=true
