@@ -17,3 +17,6 @@ include device/sony/shinano-common/cm-platform.mk
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml
+
+# CMHW
+BOARD_HARDWARE_CLASS += device/sony/scorpion_windy/cmhw
