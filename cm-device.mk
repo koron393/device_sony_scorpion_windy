@@ -19,5 +19,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="SGP611-user 7.0 23.5.A.0.570
 # Assert
 TARGET_OTA_ASSERT_DEVICE := SGP611,SGP612,scorpion_windy
 
+# This is Wi-Fi only
+BOARD_HAVE_RADIO := false
+
 # Device common
 include device/sony/scorpion_windy/cm-device-common.mk
