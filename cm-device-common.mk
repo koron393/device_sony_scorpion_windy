@@ -27,3 +27,6 @@ BOARD_HARDWARE_CLASS += device/sony/scorpion_windy/cmhw
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/sony/scorpion_windy/sepolicy
+
+# Not BLOCK BASED
+BLOCK_BASED_OTA := false
