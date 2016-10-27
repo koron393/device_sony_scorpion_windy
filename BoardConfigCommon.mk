@@ -12,7 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include device/sony/shinano/PlatformConfig.mk
+# AOSP shinano common device parts
+include device/sony/shinano-common/PlatformConfig.mk
 
 PRODUCT_VENDOR_KERNEL_HEADERS += device/sony/scorpion_windy/kernel-headers
 

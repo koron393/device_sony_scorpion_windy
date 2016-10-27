@@ -73,6 +73,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.alt.act=false
 
-$(call inherit-product, device/sony/shinano/platform.mk)
-$(call inherit-product, vendor/sony/shinano-scorpion/scorpion-vendor.mk)
+# Platform common
+$(call inherit-product, device/sony/shinano-common/platform.mk)
+
+# Dalvik heap
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
+
+# Vendor blobs
+$(call inherit-product, vendor/sony/shinano-scorpion/scorpion-vendor.mk)
