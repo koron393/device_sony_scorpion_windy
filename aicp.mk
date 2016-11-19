@@ -4,9 +4,6 @@ PRODUCT_RELEASE_NAME := scorpion_windy
 # Inherit AICP common tablet stuff.
 $(call inherit-product, vendor/aicp/configs/common_tablet.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/aicp/configs/nfc_enhanced.mk)
-
 # Inherit AOSP scorpion device parts
 $(call inherit-product, device/sony/scorpion_windy/aosp_sgp611.mk)
 
