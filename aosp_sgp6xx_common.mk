@@ -80,4 +80,10 @@ $(call inherit-product, device/sony/shinano-common/platform.mk)
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
 
 # Vendor blobs
+# for BR.1.3.3
 $(call inherit-product, vendor/sony/shinano-scorpion/scorpion-vendor.mk)
+# for BF64.1.2.2
+#$(call inherit-product, vendor/sony/scorpion/scorpion-vendor.mk)
+#$(call inherit-product, vendor/sony/shinano-common/shinano-common-vendor.mk)
+#$(call inherit-product, vendor/sony/msm8974-common/msm8974-common-vendor.mk)
+#$(call inherit-product, vendor/qcom/proprietary/qcom-proprietary.mk)
