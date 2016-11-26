@@ -2,7 +2,7 @@
 PRODUCT_RELEASE_NAME := scorpion_windy
 
 # Inherit CM common tablet stuff.
-$(call inherit-product, vendor/cm/configs/common_tablet.mk)
+$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 # Inherit AOSP scorpion device parts
 $(call inherit-product, device/sony/scorpion_windy/aosp_sgp611.mk)
