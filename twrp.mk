@@ -4,4 +4,4 @@ DEVICE_RESOLUTION := 1080x1920
 TW_THEME := portrait_hdpi
 MR_DPI := xhdpi
 MR_DPI_FONT := 340
-MR_DEVICE_VARIANTS := z3tc
+MR_DEVICE_VARIANTS := scorpion scorpion_windy z3tc
