@@ -11,8 +11,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Platform path
+PLATFORM_COMMON_PATH := device/sony/shinano-common
+
+# Device path
+BOARD_COMMON_PATH := device/sony/scorpion_windy
+
 # Platform
-include device/sony/shinano-common/cm-platform.mk
+include $(PLATFORM_COMMON_PATH)/cm-platform.mk
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -20,13 +26,13 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_COPY_FILES += \
-    device/sony/scorpion_windy/rootdir/system/etc/libnfc-brcm_cm.conf:system/etc/libnfc-brcm.conf
+    $(BOARD_COMMON_PATH)/rootdir/system/etc/libnfc-brcm_cm.conf:system/etc/libnfc-brcm.conf
 
 # CMHW
-BOARD_HARDWARE_CLASS += device/sony/scorpion_windy/cmhw
+BOARD_HARDWARE_CLASS += $(BOARD_COMMON_PATH)/cmhw
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/sony/scorpion_windy/sepolicy
+BOARD_SEPOLICY_DIRS += $(BOARD_COMMON_PATH)/sepolicy
 
 # Not BLOCK BASED
 BLOCK_BASED_OTA := false

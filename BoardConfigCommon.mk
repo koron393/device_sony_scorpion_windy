@@ -12,12 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# AOSP shinano common device parts
-include device/sony/shinano-common/PlatformConfig.mk
+# Platform path
+PLATFORM_COMMON_PATH := device/sony/shinano-common
 
-PRODUCT_VENDOR_KERNEL_HEADERS += device/sony/scorpion_windy/kernel-headers
+# Device path
+BOARD_COMMON_PATH := device/sony/scorpion_windy
+
+# AOSP shinano common device parts
+include $(PLATFORM_COMMON_PATH)/PlatformConfig.mk
+
+PRODUCT_VENDOR_KERNEL_HEADERS += $(BOARD_COMMON_PATH)/kernel-headers
 
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
 
 # TWRP scorpion common
-include device/sony/scorpion_windy/twrp.mk
+include $(BOARD_COMMON_PATH)/twrp.mk

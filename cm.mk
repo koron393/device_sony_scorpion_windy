@@ -1,3 +1,9 @@
+# Platform path
+PLATFORM_COMMON_PATH := device/sony/shinano-common
+
+# Device path
+BOARD_COMMON_PATH := device/sony/scorpion_windy
+
 # Release name
 PRODUCT_RELEASE_NAME := scorpion_windy
 
@@ -5,10 +11,10 @@ PRODUCT_RELEASE_NAME := scorpion_windy
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 # Inherit AOSP scorpion device parts
-$(call inherit-product, device/sony/scorpion_windy/aosp_sgp611.mk)
+$(call inherit-product, $(BOARD_COMMON_PATH)/aosp_sgp611.mk)
 
 # Inherit CM scorpion device parts
-$(call inherit-product, device/sony/scorpion_windy/cm-device.mk)
+$(call inherit-product, $(BOARD_COMMON_PATH)/cm-device.mk)
 
 PRODUCT_DEVICE := scorpion_windy
 PRODUCT_NAME := cm_scorpion_windy

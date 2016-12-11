@@ -12,7 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include device/sony/scorpion_windy/BoardConfigCommon.mk
+# Platform path
+PLATFORM_COMMON_PATH := device/sony/shinano-common
+
+# Device path
+BOARD_COMMON_PATH := device/sony/scorpion_windy
+
+include $(BOARD_COMMON_PATH)/BoardConfigCommon.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := SGP611
 

@@ -12,6 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Platform path
+PLATFORM_COMMON_PATH := device/sony/shinano-common
+
+# Device path
+BOARD_COMMON_PATH := device/sony/scorpion_windy
+
 TARGET_KERNEL_CONFIG := cm_shinano_scorpion_defconfig
 
 PRODUCT_COPY_FILES := \
@@ -39,10 +45,10 @@ PRODUCT_PACKAGES += \
     nfc_nci.scorpion_windy
 
 # System.prop
-TARGET_SYSTEM_PROP += device/sony/scorpion_windy/system.prop
+TARGET_SYSTEM_PROP += $(BOARD_COMMON_PATH)/system.prop
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/sony/scorpion_windy/aosp_sgp6xx_common.mk)
+$(call inherit-product, $(BOARD_COMMON_PATH)/aosp_sgp6xx_common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 PRODUCT_NAME := aosp_sgp611

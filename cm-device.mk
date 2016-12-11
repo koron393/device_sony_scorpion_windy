@@ -11,6 +11,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Platform path
+PLATFORM_COMMON_PATH := device/sony/shinano-common
+
+# Device path
+BOARD_COMMON_PATH := device/sony/scorpion_windy
+
 # Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SGP611
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=Sony/SGP611/SGP611:7.1/23.5.A.0.570/4149872938:user/release-keys
@@ -23,4 +29,4 @@ TARGET_OTA_ASSERT_DEVICE := SGP611,SGP612,scorpion_windy
 BOARD_HAVE_RADIO := false
 
 # Device common
-include device/sony/scorpion_windy/cm-device-common.mk
+include $(BOARD_COMMON_PATH)/cm-device-common.mk
