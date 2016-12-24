@@ -1,3 +1,11 @@
 # NO RIL
 rild.libpath=
 ro.radio.noril=true
+
+# Device Info
+ro.device.chipset=Qualcomm Snapdragon 801 MSM8974PRO-AC
+ro.device.cpu=Quad-core 2.5GHz Krait 400
+ro.device.gpu=Qualcomm Adreno 330
+ro.device.front_cam=2.2 MP
+ro.device.rear_cam=8.1 MP
+ro.device.screen_res=1200x1920

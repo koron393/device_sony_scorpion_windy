@@ -27,8 +27,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 	DEVICE_MAINTAINERS="koron (koron393)"
 
 # Resolution
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1200
+TARGET_SCREEN_HEIGHT := 1200
+TARGET_SCREEN_WIDTH := 1920
 
 # Boot animation
 -include vendor/aicp/configs/bootanimation.mk
