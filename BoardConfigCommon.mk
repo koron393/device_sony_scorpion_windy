@@ -25,5 +25,8 @@ PRODUCT_VENDOR_KERNEL_HEADERS += $(BOARD_COMMON_PATH)/kernel-headers
 
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
 
+# Audio
+USE_XML_AUDIO_POLICY_CONF := 1
+
 # TWRP scorpion common
 include $(BOARD_COMMON_PATH)/twrp.mk
