@@ -35,8 +35,12 @@
                              samplingRates="44100,48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
-                <mixPort name="deep_buffer" role="source"
-                        flags="AUDIO_OUTPUT_FLAG_DEEP_BUFFER">
+                <mixPort name="raw" role="source" flags="AUDIO_OUTPUT_FLAG_RAW|AUDIO_OUTPUT_FLAG_FAST">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="44100,48000"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
+                <mixPort name="deep_buffer" role="source" flags="AUDIO_OUTPUT_FLAG_DEEP_BUFFER">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
@@ -45,6 +49,15 @@
                          flags="AUDIO_OUTPUT_FLAG_DIRECT|AUDIO_OUTPUT_FLAG_COMPRESS_OFFLOAD|AUDIO_OUTPUT_FLAG_NON_BLOCKING">
                     <profile name="" format="AUDIO_FORMAT_MP3"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_MONO"/>
+                    <profile name="" format="AUDIO_FORMAT_FLAC"
+                             samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000,96000"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_MONO"/>
+                    <profile name="" format="AUDIO_FORMAT_ALAC"
+                             samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000,96000"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_MONO"/>
+                    <profile name="" format="AUDIO_FORMAT_APE"
+                             samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000,96000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_MONO"/>
                     <profile name="" format="AUDIO_FORMAT_AAC_LC"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
@@ -55,11 +68,30 @@
                     <profile name="" format="AUDIO_FORMAT_AAC_HE_V2"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_MONO"/>
+                    <profile name="" format="AUDIO_FORMAT_WMA"
+                             samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_MONO"/>
+                    <profile name="" format="AUDIO_FORMAT_WMA_PRO"
+                             samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_MONO"/>
+                    <profile name="" format="AUDIO_FORMAT_VORBIS"
+                             samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_MONO"/>
                 </mixPort>
                 <mixPort name="voice_tx" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,16000,48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_MONO"/>
+                </mixPort>
+                <mixPort name="high_res_audio" role="source" flags="AUDIO_OUTPUT_FLAG_DIRECT|AUDIO_OUTPUT_FLAG_HIGH_RES_AUDIO">
+                    <profile name="" format="AUDIO_FORMAT_PCM_8_24_BIT"
+                             samplingRates="96000"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
+                <mixPort name="dsee_direct" role="source" flags="AUDIO_OUTPUT_FLAG_DIRECT|AUDIO_OUTPUT_FLAG_DSEE|AUDIO_OUTPUT_FLAG_HIGH_RES_AUDIO">
+                    <profile name="" format="AUDIO_FORMAT_PCM_8_24_BIT"
+                             samplingRates="96000"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
                 <mixPort name="primary input" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -85,6 +117,8 @@
                 </devicePort>
                 <devicePort tagName="BT SCO Headset" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET" role="sink">
                 </devicePort>
+                <devicePort tagName="BT SCO Car Kit" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT" role="sink">
+                </devicePort>
                 <devicePort tagName="Telephony Tx" type="AUDIO_DEVICE_OUT_TELEPHONY_TX" role="sink">
                 </devicePort>
 
@@ -103,17 +137,19 @@
             </devicePorts>
             <routes>
                 <route type="mix" sink="Earpiece"
-                       sources="primary output,deep_buffer"/>
+                       sources="primary output,raw,deep_buffer"/>
                 <route type="mix" sink="Speaker"
-                       sources="primary output,deep_buffer,compressed_offload"/>
+                       sources="primary output,raw,deep_buffer,compressed_offload,high_res_audio,dsee_direct"/>
                 <route type="mix" sink="Wired Headset"
-                       sources="primary output,deep_buffer,compressed_offload"/>
+                       sources="primary output,raw,deep_buffer,compressed_offload,high_res_audio,dsee_direct"/>
                 <route type="mix" sink="Wired Headphones"
-                       sources="primary output,deep_buffer,compressed_offload"/>
+                       sources="primary output,raw,deep_buffer,compressed_offload,high_res_audio,dsee_direct"/>
                 <route type="mix" sink="BT SCO"
-                       sources="primary output,deep_buffer"/>
+                       sources="primary output,raw,deep_buffer"/>
                 <route type="mix" sink="BT SCO Headset"
-                       sources="primary output,deep_buffer"/>
+                       sources="primary output,raw,deep_buffer"/>
+                <route type="mix" sink="BT SCO Car Kit"
+                       sources="primary output,raw,deep_buffer"/>
                 <route type="mix" sink="Telephony Tx"
                        sources="voice_tx"/>
                 <route type="mix" sink="primary input"
