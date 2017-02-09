@@ -90,6 +90,9 @@ $(call inherit-product, $(PLATFORM_COMMON_PATH)/platform.mk)
 # Dalvik heap
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
 
+# copy wlan firmware
+$(call inherit-product-if-exists, vendor/broadcom/wlan/bcmdhd/firmware/bcm4354/device-bcm.mk)
+
 # Vendor blobs
 # for BR.1.3.3
 $(call inherit-product, vendor/sony/shinano-scorpion/scorpion-vendor.mk)
