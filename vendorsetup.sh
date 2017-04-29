@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo cm_scorpion_windy-userdebug
+add_lunch_combo lineage_scorpion_windy-userdebug

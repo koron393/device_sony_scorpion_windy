@@ -13,8 +13,8 @@ $(call inherit-product, vendor/aicp/configs/common_tablet.mk)
 # Inherit AOSP scorpion device parts
 $(call inherit-product, $(BOARD_COMMON_PATH)/aosp_sgp611.mk)
 
-# Inherit CM scorpion device parts
-$(call inherit-product, $(BOARD_COMMON_PATH)/cm-device.mk)
+# Inherit LOS scorpion device parts
+$(call inherit-product, $(BOARD_COMMON_PATH)/lineage-device.mk)
 
 PRODUCT_DEVICE := scorpion_windy
 PRODUCT_NAME := aicp_scorpion_windy

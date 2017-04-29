@@ -7,17 +7,17 @@ BOARD_COMMON_PATH := device/sony/scorpion_windy
 # Release name
 PRODUCT_RELEASE_NAME := scorpion_windy
 
-# Inherit CM common tablet stuff.
+# Inherit LOS common tablet stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 # Inherit AOSP scorpion device parts
 $(call inherit-product, $(BOARD_COMMON_PATH)/aosp_sgp611.mk)
 
-# Inherit CM scorpion device parts
-$(call inherit-product, $(BOARD_COMMON_PATH)/cm-device.mk)
+# Inherit LOS scorpion device parts
+$(call inherit-product, $(BOARD_COMMON_PATH)/lineage-device.mk)
 
 PRODUCT_DEVICE := scorpion_windy
-PRODUCT_NAME := cm_scorpion_windy
+PRODUCT_NAME := lineage_scorpion_windy
 PRODUCT_BRAND := Sony
 PRODUCT_MODEL := Xperia Z3 Tablet Compact (Wi-Fi)
 PRODUCT_MANUFACTURER := Sony

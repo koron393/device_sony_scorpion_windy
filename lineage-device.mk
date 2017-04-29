@@ -17,22 +17,16 @@ PLATFORM_COMMON_PATH := device/sony/shinano-common
 # Device path
 BOARD_COMMON_PATH := device/sony/scorpion_windy
 
-# Platform
-include $(PLATFORM_COMMON_PATH)/cm-platform.mk
+# Fingerprint
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=SGP611
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=Sony/SGP611/SGP611:7.1/23.5.A.0.570/4149872938:user/release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="SGP611-user 7.1 23.5.A.0.570 4149872938 release-keys"
 
-# Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml
+# Assert
+TARGET_OTA_ASSERT_DEVICE := SGP611,SGP612,scorpion_windy,scorpion
 
-# NFC
-PRODUCT_COPY_FILES += \
-    $(BOARD_COMMON_PATH)/rootdir/system/etc/libnfc-brcm_cm.conf:system/etc/libnfc-brcm.conf
+# This is Wi-Fi only
+BOARD_HAVE_RADIO := false
 
-# CMHW
-BOARD_HARDWARE_CLASS += $(BOARD_COMMON_PATH)/cmhw
-
-# SELinux
-BOARD_SEPOLICY_DIRS += $(BOARD_COMMON_PATH)/sepolicy
-
-# Not BLOCK BASED
-BLOCK_BASED_OTA := false
+# Device common
+include $(BOARD_COMMON_PATH)/lineage-device-common.mk
