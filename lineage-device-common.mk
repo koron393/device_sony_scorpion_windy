@@ -36,3 +36,6 @@ BOARD_SEPOLICY_DIRS += $(BOARD_COMMON_PATH)/sepolicy
 
 # Not BLOCK BASED
 BLOCK_BASED_OTA := false
+
+# BootAnimation
+PRODUCT_BOOTANIMATION := $(BOARD_COMMON_PATH)/bootanimation.zip
