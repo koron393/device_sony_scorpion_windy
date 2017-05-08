@@ -37,5 +37,8 @@ BOARD_SEPOLICY_DIRS += $(BOARD_COMMON_PATH)/sepolicy
 # Not BLOCK BASED
 BLOCK_BASED_OTA := false
 
+# No CM charger
+WITH_CM_CHARGER := false
+
 # BootAnimation
 PRODUCT_BOOTANIMATION := $(BOARD_COMMON_PATH)/bootanimation.zip
