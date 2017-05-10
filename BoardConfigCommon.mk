@@ -58,5 +58,8 @@ AUDIO_FEATURE_ENABLED_DTS_EAGLE := false
 BOARD_USES_SRS_TRUEMEDIA := false
 AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL := false
 
+# Enable real time lockscreen charging current values
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
 # TWRP scorpion common
 include $(BOARD_COMMON_PATH)/twrp.mk
