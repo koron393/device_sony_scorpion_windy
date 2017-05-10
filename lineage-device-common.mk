@@ -40,5 +40,9 @@ BLOCK_BASED_OTA := false
 # No CM charger
 WITH_CM_CHARGER := false
 
+# Charger images
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # BootAnimation
 PRODUCT_BOOTANIMATION := $(BOARD_COMMON_PATH)/bootanimation.zip
