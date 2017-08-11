@@ -25,6 +25,13 @@ PRODUCT_VENDOR_KERNEL_HEADERS += $(BOARD_COMMON_PATH)/kernel-headers
 
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
 
+DEVICE_SPECIFIC_AUDIO_PATH := hardware/qcom/audio-caf/msm8994
+DEVICE_SPECIFIC_DISPLAY_PATH := hardware/qcom/display-caf/msm8994
+DEVICE_SPECIFIC_MEDIA_PATH := hardware/qcom/media-caf/msm8994
+USE_DEVICE_SPECIFIC_AUDIO := true
+USE_DEVICE_SPECIFIC_DISPLAY := true
+USE_DEVICE_SPECIFIC_MEDIA := true
+
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
 AUDIO_FEATURE_ENABLED_FLAC_OFFLOAD := true
