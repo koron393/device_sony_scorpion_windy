@@ -93,9 +93,6 @@ $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-hea
 # copy wlan firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4354/device-bcm.mk)
 
-# copy NFC firmware
-$(call inherit-product-if-exists, vendor/nxp/nxp-vendor.mk)
-
 # Vendor blobs
 # for BR.1.3.3
 $(call inherit-product, vendor/sony/shinano-scorpion/scorpion-vendor.mk)
