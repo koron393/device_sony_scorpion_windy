@@ -8,7 +8,7 @@ BOARD_COMMON_PATH := device/sony/scorpion_windy
 PRODUCT_RELEASE_NAME := scorpion_windy
 
 # Inherit AICP common tablet stuff.
-$(call inherit-product, vendor/aicp/configs/common_tablet.mk)
+$(call inherit-product, vendor/aicp/config/common_full_tablet_wifionly.mk)
 
 # Inherit AOSP scorpion device parts
 $(call inherit-product, $(BOARD_COMMON_PATH)/aosp_sgp611.mk)
